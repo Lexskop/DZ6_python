@@ -6,11 +6,6 @@
 # список: ["123", "234", 123, "567"], ищем: "123", ответ: -1
 # список: [], ищем: "123", ответ: -1
 
-my_list = []
-my_string = ''
-while my_string != ' ':
-    my_string = str(input('Введите строку. Для окончания ввода введите пробел " " -> '))
-    my_list.append(my_string)
-find = input('Введите строку для поиска -> ')
-position = -1 if my_list.count(find) < 2 else list(filter(lambda x: x[1] == find, enumerate(my_list)))[1][0]
-print(f'Позиция втрого вхождения строки "{find}" -> {position}')
+list_to_work, find_word = list(map(str,input('Введите строки через пробел -> ').split())), input('Введите строку для поиска -> ')
+position = -1 if list_to_work.count(find_word) < 2 else list(filter(lambda x: x[1] == find_word, enumerate(list_to_work)))[1][0]
+print(f'Позиция втрого вхождения строки "{find_word}" -> {position}')
